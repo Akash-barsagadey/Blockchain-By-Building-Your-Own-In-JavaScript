@@ -3,8 +3,9 @@ const Blockchain = require('../dev/blockchain')
 const bitcoin = new Blockchain();
 
 bitcoin.createNewBlock(2389,'csaaaaa','sdsaaaa')
-bitcoin.createNewBlock(111,'csaaassaa','sdsassaaa')
-bitcoin.createNewBlock(23231,'csaasgggaaa','sdsgggaaaa')
 
+bitcoin.createNewTransaction(100,'senderrdrrrr','reciepirnsts')
 
-console.log(bitcoin);
+bitcoin.createNewBlock(23333,'addada','sdsadasdaddcde')
+
+console.log(bitcoin.chain[1]);
