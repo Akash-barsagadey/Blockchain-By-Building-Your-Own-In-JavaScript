@@ -11,5 +11,8 @@
     "url": "git+https://github.com/Akash-barsagadey/Blockchain-By-Building-Your-Own-In-JavaScript.git"
   },
   "author": "Akash",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sha256": "^0.2.0"
+  }
 }
