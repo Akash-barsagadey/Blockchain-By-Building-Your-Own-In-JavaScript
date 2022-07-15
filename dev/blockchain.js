@@ -13,14 +13,14 @@ function Blockchain() {
     this.createNewBlock(100, "0", "0");
 }
 
-Blockchain.prototype.createNewBlock = function (nonce, previousBlockhash, hash) {
+Blockchain.prototype.createNewBlock = function (nonce, previousBlockHash, hash) {
     const newBlock = {
         index: this.chain.length + 1,
         timeStamp: Date.now(),
         transaction: this.pendingTransactions,
         nonce: nonce,
         hash: hash,
-        previousBlockhash: previousBlockhash,
+        previousBlockHash: previousBlockHash,
     };
 
     this.pendingTransactions = [];
@@ -49,8 +49,8 @@ Blockchain.prototype.addTransactionToPendingTransactions = function (transaction
     return this.getLastBlock()["index"] + 1;
 };
 
-Blockchain.prototype.hashBlock = function (previousBlockhash, currentBlockData, nonce) {
-    const dataAsString = previousBlockhash + nonce.toString() + JSON.stringify(currentBlockData);
+Blockchain.prototype.hashBlock = function (previousBlockHash, currentBlockData, nonce) {
+    const dataAsString = previousBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
     const hash = sha256(dataAsString);
     return hash;
 };
