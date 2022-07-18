@@ -213,6 +213,15 @@ app.get("/consensus", function (req, res) {
     });
 });
 
+// get block by blockHashx
+app.get("/block/:blockHash", function (req, res) {
+    const blockHash = req.params.blockHash;
+    const correctBlock = bitcoin.getBlock(blockHash);
+    res.json({
+        block: correctBlock,
+    });
+});
+
 app.listen(port, function () {
     console.log(`Listening on port ${port}...`);
 });
