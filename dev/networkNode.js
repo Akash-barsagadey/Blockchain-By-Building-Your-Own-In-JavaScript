@@ -222,6 +222,16 @@ app.get("/block/:blockHash", function (req, res) {
     });
 });
 
+// get transaction by transactionId
+app.get("/transaction/:transactionId", function (req, res) {
+    const transactionId = req.params.transactionId;
+    const trasactionData = bitcoin.getTransaction(transactionId);
+    res.json({
+        transaction: trasactionData.transaction,
+        block: trasactionData.block,
+    });
+});
+
 app.listen(port, function () {
     console.log(`Listening on port ${port}...`);
 });
